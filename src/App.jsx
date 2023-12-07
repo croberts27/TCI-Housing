@@ -1,14 +1,7 @@
 import "./index.css";
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
-import {
-  ArrowPathIcon,
-  Bars3Icon,
-  CloudArrowUpIcon,
-  FingerPrintIcon,
-  LockClosedIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
+import { XMarkIcon } from "@heroicons/react/24/outline";
 import { CheckIcon } from "@heroicons/react/20/solid";
 
 const navigation = [
@@ -16,32 +9,7 @@ const navigation = [
   { name: "Marketplace", href: "#" },
   { name: "Contact Us", href: "#Contact" },
 ];
-const features = [
-  {
-    name: "Push to deploy",
-    description:
-      "Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.",
-    icon: CloudArrowUpIcon,
-  },
-  {
-    name: "SSL certificates",
-    description:
-      "Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.",
-    icon: LockClosedIcon,
-  },
-  {
-    name: "Simple queues",
-    description:
-      "Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.",
-    icon: ArrowPathIcon,
-  },
-  {
-    name: "Advanced security",
-    description:
-      "Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.",
-    icon: FingerPrintIcon,
-  },
-];
+
 const tiers = [
   {
     name: "Freelancer",
@@ -134,50 +102,38 @@ export default function Example() {
   return (
     <div className="bg-fixed  bg-repeat bg-hoops-background">
       {/* Header */}
-      <header className="absolute inset-x-0 top-0 z-50">
+      <header className="absolute shadow-sm inset-x-0 top-0 z-50">
         <nav
-          className="flex items-center  justify-between p-6 lg:px-12"
+          className="flex items-center justify-between
+           p-6 lg:px-12"
           aria-label="Global"
         >
-          <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">TCI Housing</span>
-              <img
-                className="h-14 w-auto"
-                src="./src/images/tci-logo-trans.png"
-                alt="TCI Housing Logo"
-              />
-            </a>
-          </div>
-          <div className="flex lg:hidden">
-            <button
-              type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-              onClick={() => setMobileMenuOpen(true)}
-            >
-              <span className="sr-only">Open main menu</span>
-              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-            </button>
-          </div>
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-2xl font-semibold leading-6 text-gray-900"
+                className="text-2xl font-semibold leading-6 text-white"
               >
                 {item.name}
               </a>
             ))}
           </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            {/* <a
-              href="#"
-              className="text-sm font-semibold leading-6 text-gray-900"
-            >
-              Log in <span aria-hidden="true">&rarr;</span>
-            </a> */}
+          <div className="flex lg:flex-1 justify-end items-center">
+            <a href="#" className="-m-1.5 p-1.5">
+              <span className="sr-only"></span>
+              <img
+                className="h-20 w-auto"
+                src="./src/images/tci-logo-trans.png"
+                alt="TCI Housing Logo"
+              />
+            </a>
           </div>
+
+          <div className="hidden lg:flex lg:gap-x-12">
+            {/* Remove duplicate links here */}
+          </div>
+          <div className="flex lg:hidden">{/* Mobile menu button */}</div>
         </nav>
         <Dialog
           as="div"
@@ -192,13 +148,13 @@ export default function Example() {
                 <span className="sr-only">TCI Housing</span>
                 <img
                   className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                  alt=""
+                  src="./src/images/tci-logo-trans.png"
+                  alt="tci logo"
                 />
               </a>
               <button
                 type="button"
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
+                className="-m-2.5 rounded-md p-2.5 text-white"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="sr-only">Close menu</span>
@@ -212,7 +168,7 @@ export default function Example() {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
                     >
                       {item.name}
                     </a>
@@ -221,7 +177,7 @@ export default function Example() {
                 <div className="py-6">
                   {/* <a
                     href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-gray-50"
                   >
                     Log in
                   </a> */}
@@ -250,10 +206,10 @@ export default function Example() {
           <div className="py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <div className="mx-auto max-w-2xl text-center">
-                <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
                   Deploy to the cloud with confidence
                 </h1>
-                <p className="mt-6 text-lg leading-8 text-gray-600">
+                <p className="mt-6 text-lg leading-8 text-white">
                   Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure
                   qui lorem cupidatat commodo. Elit sunt amet fugiat veniam
                   occaecat fugiat aliqua.
@@ -267,7 +223,7 @@ export default function Example() {
                   </a>
                   <a
                     href="#"
-                    className="text-sm font-semibold leading-6 text-gray-900"
+                    className="text-sm font-semibold leading-6 text-white"
                   >
                     Learn more <span aria-hidden="true">→</span>
                   </a>
@@ -340,7 +296,7 @@ export default function Example() {
             />
           </div>
           <div className="mt-16 flex justify-center">
-            <p className="relative rounded-full px-4 py-1.5 text-sm leading-6 text-gray-600 ring-1 ring-inset ring-gray-900/10 hover:ring-gray-900/20">
+            <p className="relative rounded-full px-4 py-1.5 text-sm leading-6 text-white ring-1 ring-inset ring-gray-900/10 hover:ring-gray-900/20">
               <span className="hidden md:inline">
                 Transistor saves up to $40,000 per year, per employee by working
                 with us.
@@ -353,16 +309,16 @@ export default function Example() {
           </div>
         </div>
 
-        {/* Feature section */}
+        {/* Feature section
         <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
             <h2 className="text-base font-semibold leading-7 text-indigo-600">
               Deploy faster
             </h2>
-            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Everything you need to deploy your app
             </p>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
+            <p className="mt-6 text-lg leading-8 text-white">
               Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
               Suspendisse eget egestas a elementum pulvinar et feugiat blandit
               at. In mi viverra elit nunc.
@@ -372,7 +328,7 @@ export default function Example() {
             <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
               {features.map((feature) => (
                 <div key={feature.name} className="relative pl-16">
-                  <dt className="text-base font-semibold leading-7 text-gray-900">
+                  <dt className="text-base font-semibold leading-7 text-white">
                     <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
                       <feature.icon
                         className="h-6 w-6 text-white"
@@ -381,14 +337,14 @@ export default function Example() {
                     </div>
                     {feature.name}
                   </dt>
-                  <dd className="mt-2 text-base leading-7 text-gray-600">
+                  <dd className="mt-2 text-base leading-7 text-white">
                     {feature.description}
                   </dd>
                 </div>
               ))}
             </dl>
           </div>
-        </div>
+        </div> */}
 
         {/* Testimonial section */}
         <div className="mx-auto mt-32 max-w-7xl sm:mt-56 sm:px-6 lg:px-8">
@@ -452,14 +408,14 @@ export default function Example() {
         <div className="py-24 sm:pt-48">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-4xl text-center">
-              <h2 className="text-base font-semibold leading-7 text-indigo-600">
+              <h2 className="text-base font-semibold leading-7 text-white">
                 Pricing
               </h2>
-              <p className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+              <p className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
                 Pricing plans for teams of&nbsp;all&nbsp;sizes
               </p>
             </div>
-            <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">
+            <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-white">
               Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et
               quasi iusto modi velit ut non voluptas in. Explicabo id ut
               laborum.
@@ -482,7 +438,7 @@ export default function Example() {
                         className={classNames(
                           tier.mostPopular
                             ? "text-indigo-600"
-                            : "text-gray-900",
+                            : "text-indigo-600 ",
                           "text-lg font-semibold leading-8"
                         )}
                       >
@@ -494,20 +450,20 @@ export default function Example() {
                         </p>
                       ) : null}
                     </div>
-                    <p className="mt-4 text-sm leading-6 text-gray-600">
+                    <p className="mt-4 text-sm leading-6 text-black">
                       {tier.description}
                     </p>
                     <p className="mt-6 flex items-baseline gap-x-1">
-                      <span className="text-4xl font-bold tracking-tight text-gray-900">
+                      <span className="text-4xl font-bold tracking-tight text-black">
                         {tier.priceMonthly}
                       </span>
-                      <span className="text-sm font-semibold leading-6 text-gray-600">
+                      <span className="text-sm font-semibold leading-6 text-black">
                         /month
                       </span>
                     </p>
                     <ul
                       role="list"
-                      className="mt-8 space-y-3 text-sm leading-6 text-gray-600"
+                      className="mt-8 space-y-3 text-sm leading-6 text-black"
                     >
                       {tier.features.map((feature) => (
                         <li key={feature} className="flex gap-x-3">
@@ -540,7 +496,7 @@ export default function Example() {
 
         {/* FAQs */}
         <div className="mx-auto max-w-2xl divide-y divide-gray-900/10 px-6 pb-8 sm:pb-24 sm:pt-12 lg:max-w-7xl lg:px-8 lg:pb-32">
-          <h2 className="text-2xl font-bold leading-10 tracking-tight text-gray-900">
+          <h2 className="text-2xl font-bold leading-10 tracking-tight text-white">
             Frequently asked questions
           </h2>
           <dl className="mt-10 space-y-8 divide-y divide-gray-900/10">
@@ -549,13 +505,11 @@ export default function Example() {
                 key={faq.id}
                 className="pt-8 lg:grid lg:grid-cols-12 lg:gap-8"
               >
-                <dt className="text-base font-semibold leading-7 text-gray-900 lg:col-span-5">
+                <dt className="text-base font-semibold leading-7 text-white lg:col-span-5">
                   {faq.question}
                 </dt>
                 <dd className="mt-4 lg:col-span-7 lg:mt-0">
-                  <p className="text-base leading-7 text-gray-600">
-                    {faq.answer}
-                  </p>
+                  <p className="text-base leading-7 text-white">{faq.answer}</p>
                 </dd>
               </div>
             ))}
@@ -577,12 +531,12 @@ export default function Example() {
             />
           </div>
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Boost your productivity.
               <br />
               Start using our app today.
             </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-600">
+            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white">
               Incididunt sint fugiat pariatur cupidatat consectetur sit cillum
               anim id veniam aliqua proident excepteur commodo do ea.
             </p>
@@ -595,7 +549,7 @@ export default function Example() {
               </a>
               <a
                 href="#"
-                className="text-sm font-semibold leading-6 text-gray-900"
+                className="text-sm font-semibold leading-6 text-white"
               >
                 Learn more <span aria-hidden="true">→</span>
               </a>
@@ -627,14 +581,14 @@ export default function Example() {
           </h2>
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
             <img
-              className="h-7"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+              className="h-24 w-auto"
+              src="./src/images/tci-logo-trans.png"
               alt="Company name"
             />
             <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div>
-                  <h3 className="text-sm font-semibold leading-6 text-gray-900">
+                  <h3 className="text-sm font-semibold leading-6 text-white">
                     Solutions
                   </h3>
                   <ul role="list" className="mt-6 space-y-4">
@@ -642,7 +596,7 @@ export default function Example() {
                       <li key={item.name}>
                         <a
                           href={item.href}
-                          className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                          className="text-sm leading-6 text-white hover:text-white"
                         >
                           {item.name}
                         </a>
@@ -651,7 +605,7 @@ export default function Example() {
                   </ul>
                 </div>
                 <div className="mt-10 md:mt-0">
-                  <h3 className="text-sm font-semibold leading-6 text-gray-900">
+                  <h3 className="text-sm font-semibold leading-6 text-white">
                     Support
                   </h3>
                   <ul role="list" className="mt-6 space-y-4">
@@ -659,7 +613,7 @@ export default function Example() {
                       <li key={item.name}>
                         <a
                           href={item.href}
-                          className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                          className="text-sm leading-6 text-white hover:text-white"
                         >
                           {item.name}
                         </a>
@@ -670,7 +624,7 @@ export default function Example() {
               </div>
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div>
-                  <h3 className="text-sm font-semibold leading-6 text-gray-900">
+                  <h3 className="text-sm font-semibold leading-6 text-white">
                     Company
                   </h3>
                   <ul role="list" className="mt-6 space-y-4">
@@ -678,7 +632,7 @@ export default function Example() {
                       <li key={item.name}>
                         <a
                           href={item.href}
-                          className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                          className="text-sm leading-6 text-white hover:text-white"
                         >
                           {item.name}
                         </a>
@@ -687,7 +641,7 @@ export default function Example() {
                   </ul>
                 </div>
                 <div className="mt-10 md:mt-0">
-                  <h3 className="text-sm font-semibold leading-6 text-gray-900">
+                  <h3 className="text-sm font-semibold leading-6 text-white">
                     Legal
                   </h3>
                   <ul role="list" className="mt-6 space-y-4">
@@ -695,7 +649,7 @@ export default function Example() {
                       <li key={item.name}>
                         <a
                           href={item.href}
-                          className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                          className="text-sm leading-6 text-white hover:text-white"
                         >
                           {item.name}
                         </a>
