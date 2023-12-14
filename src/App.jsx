@@ -2,69 +2,69 @@ import "./index.css";
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { CheckIcon } from "@heroicons/react/20/solid";
+// import { CheckIcon } from "@heroicons/react/20/solid";
 
 const navigation = [
   { name: "Events", href: "#Events" },
-  { name: "Marketplace", href: "#" },
+  { name: "Marketplace", href: "#Marketplace" },
   { name: "Contact Us", href: "#Contact" },
 ];
 
-const tiers = [
-  {
-    name: "Freelancer",
-    id: "tier-freelancer",
-    href: "#",
-    priceMonthly: "$24",
-    description: "The essentials to provide your best work for clients.",
-    features: [
-      "5 products",
-      "Up to 1,000 subscribers",
-      "Basic analytics",
-      "48-hour support response time",
-    ],
-    mostPopular: false,
-  },
-  {
-    name: "Startup",
-    id: "tier-startup",
-    href: "#",
-    priceMonthly: "$32",
-    description: "A plan that scales with your rapidly growing business.",
-    features: [
-      "25 products",
-      "Up to 10,000 subscribers",
-      "Advanced analytics",
-      "24-hour support response time",
-      "Marketing automations",
-    ],
-    mostPopular: true,
-  },
-  {
-    name: "Enterprise",
-    id: "tier-enterprise",
-    href: "#",
-    priceMonthly: "$48",
-    description: "Dedicated support and infrastructure for your company.",
-    features: [
-      "Unlimited products",
-      "Unlimited subscribers",
-      "Advanced analytics",
-      "1-hour, dedicated support response time",
-      "Marketing automations",
-    ],
-    mostPopular: false,
-  },
-];
-const faqs = [
-  {
-    id: 1,
-    question: "What's the best thing about Switzerland?",
-    answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-  },
-  // More questions...
-];
+// const tiers = [
+//   {
+//     name: "Freelancer",
+//     id: "tier-freelancer",
+//     href: "#",
+//     priceMonthly: "$24",
+//     description: "The essentials to provide your best work for clients.",
+//     features: [
+//       "5 products",
+//       "Up to 1,000 subscribers",
+//       "Basic analytics",
+//       "48-hour support response time",
+//     ],
+//     mostPopular: false,
+//   },
+//   {
+//     name: "Startup",
+//     id: "tier-startup",
+//     href: "#",
+//     priceMonthly: "$32",
+//     description: "A plan that scales with your rapidly growing business.",
+//     features: [
+//       "25 products",
+//       "Up to 10,000 subscribers",
+//       "Advanced analytics",
+//       "24-hour support response time",
+//       "Marketing automations",
+//     ],
+//     mostPopular: true,
+//   },
+//   {
+//     name: "Enterprise",
+//     id: "tier-enterprise",
+//     href: "#",
+//     priceMonthly: "$48",
+//     description: "Dedicated support and infrastructure for your company.",
+//     features: [
+//       "Unlimited products",
+//       "Unlimited subscribers",
+//       "Advanced analytics",
+//       "1-hour, dedicated support response time",
+//       "Marketing automations",
+//     ],
+//     mostPopular: false,
+//   },
+// ];
+// const faqs = [
+//   {
+//     id: 1,
+//     question: "What's the best thing about Switzerland?",
+//     answer:
+//       "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+//   },
+//   // More questions...
+// ];
 const footerNavigation = {
   solutions: [
     { name: "Hosting", href: "#" },
@@ -79,7 +79,7 @@ const footerNavigation = {
     { name: "API Reference", href: "#" },
   ],
   company: [
-    { name: "About", href: "#" },
+    { name: "About", href: "#About" },
     { name: "Blog", href: "#" },
     { name: "Jobs", href: "#" },
     { name: "Press", href: "#" },
@@ -92,9 +92,9 @@ const footerNavigation = {
   ],
 };
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+// function classNames(...classes) {
+//   return classes.filter(Boolean).join(" ");
+// }
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -257,7 +257,7 @@ export default function Example() {
         </div>
 
         {/* Logo cloud */}
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {/* <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:grid-cols-5">
             <img
               className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
@@ -307,10 +307,10 @@ export default function Example() {
               </a>
             </p>
           </div>
-        </div>
+        </div> */}
 
         {/* Testimonial section */}
-        <div className="mx-auto mt-32 max-w-7xl sm:mt-56 sm:px-6 lg:px-8">
+        {/* <div className="mx-auto mt-32 max-w-7xl sm:mt-56 sm:px-6 lg:px-8">
           <div className="relative overflow-hidden bg-gray-900 px-6 py-20 shadow-xl sm:rounded-3xl sm:px-10 sm:py-24 md:px-12 lg:px-20">
             <img
               className="absolute inset-0 h-full w-full object-cover brightness-150 saturate-0"
@@ -365,10 +365,10 @@ export default function Example() {
               </figure>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Pricing section */}
-        <div className="py-24 sm:pt-48">
+        {/* <div className="py-24 sm:pt-48">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-4xl text-center">
               <h2 className="text-base font-semibold leading-7 text-white">
@@ -455,10 +455,10 @@ export default function Example() {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* FAQs */}
-        <div className="mx-auto max-w-2xl divide-y divide-gray-900/10 px-6 pb-8 sm:pb-24 sm:pt-12 lg:max-w-7xl lg:px-8 lg:pb-32">
+        {/* <div className="mx-auto max-w-2xl divide-y divide-gray-900/10 px-6 pb-8 sm:pb-24 sm:pt-12 lg:max-w-7xl lg:px-8 lg:pb-32">
           <h2 className="text-2xl font-bold leading-10 tracking-tight text-white">
             Frequently asked questions
           </h2>
@@ -477,10 +477,10 @@ export default function Example() {
               </div>
             ))}
           </dl>
-        </div>
+        </div> */}
 
         {/* CTA section */}
-        <div className="relative -z-10 mt-32 px-6 lg:px-8">
+        {/* <div className="relative -z-10 mt-32 px-6 lg:px-8">
           <div
             className="absolute inset-x-0 top-1/2 -z-10 flex -translate-y-1/2 transform-gpu justify-center overflow-hidden blur-3xl sm:bottom-0 sm:right-[calc(50%-6rem)] sm:top-auto sm:translate-y-0 sm:transform-gpu sm:justify-end"
             aria-hidden="true"
@@ -530,7 +530,7 @@ export default function Example() {
               }}
             />
           </div>
-        </div>
+        </div> */}
       </main>
 
       {/* Footer */}
