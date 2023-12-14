@@ -6,6 +6,9 @@ export default {
       backgroundImage: {
         "hoops-background": "url('/src/images/hoop.png')",
       },
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+      },
     },
   },
   plugins: [],
