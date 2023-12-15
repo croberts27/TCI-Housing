@@ -136,8 +136,8 @@ export default function App() {
         <div className="App">
           <Router>
             <Routes>
-              <Route exact path="/" component={App} />
-              <Route exact path="/contact" component={Contact} />
+              <Route exact path="/" element={<App />} />
+              <Route exact path="/contact" element={Contact} />
             </Routes>
           </Router>
         </div>
