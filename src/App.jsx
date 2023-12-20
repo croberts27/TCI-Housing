@@ -1,22 +1,19 @@
 import "./index.css";
+// eslint-disable-next-line no-unused-vars
 import React from "react";
-import { useState } from "react";
-import { Dialog } from "@headlessui/react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 
 export default function App() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
     <>
       <Router>
         <div className="bg-fixed font-poppins bg-repeat bg-hoops-background">
           <Navbar />
+
           <main className="isolate">
             <Routes>
               <Route
