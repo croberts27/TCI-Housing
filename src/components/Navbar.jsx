@@ -12,7 +12,13 @@ function Navbar() {
 
   const isActive = (path) => {
     // Check if the current location matches the path
-    if (location.pathname === "/contact") {
+    if (location.pathname === "/contact-event-ops") {
+      return "text-black"; // For Contact page or any other page
+    }
+    if (location.pathname === "/contact-event-attendees") {
+      return "text-black"; // For Contact page or any other page
+    }
+    if (location.pathname === "/contact-event-hoteliers") {
       return "text-black"; // For Contact page or any other page
     } else if (path === "/" && location.pathname !== "/") {
       return "text-white"; // For Home page
@@ -21,8 +27,17 @@ function Navbar() {
   };
 
   const arrowIcon = (path) => {
-    if (location.pathname === "/contact") {
+    if (location.pathname === "/contact-event-ops") {
       return "text-black";
+    }
+    if (location.pathname === "/contact-event-ops") {
+      return "text-black"; // For Contact page or any other page
+    }
+    if (location.pathname === "/contact-event-attendees") {
+      return "text-black"; // For Contact page or any other page
+    }
+    if (location.pathname === "/contact-event-hoteliers") {
+      return "text-black"; // For Contact page or any other page
     } else if (path === "/" && location.pathname === "/") {
       return "text-white";
     }
@@ -57,13 +72,13 @@ function Navbar() {
             <div>
               <Menu.Button
                 className={`border-gray-300 inline-flex w-full items-center justify-center border-b-2 px-1 pt-1 text-xl font-medium text-black ${isActive(
-                  "/contact"
+                  "/contact-event-ops"
                 )}`}
               >
                 Contact Us
                 <ChevronDownIcon
                   className={`-mr-1 h-5 w-5 text-black ${arrowIcon(
-                    "/contact"
+                    "/contact-event-ops"
                   )}`}
                   aria-hidden="true"
                 />
@@ -83,8 +98,8 @@ function Navbar() {
                 <div className="py-1">
                   <Menu.Item>
                     {({ active }) => (
-                      <a
-                        href="/contact"
+                      <Link
+                        to="/contact-event-ops"
                         className={classNames(
                           active
                             ? "bg-gray-100 text-gray-900"
@@ -93,15 +108,15 @@ function Navbar() {
                         )}
                       >
                         Event Operators
-                      </a>
+                      </Link>
                     )}
                   </Menu.Item>
                 </div>
                 <div className="py-1">
                   <Menu.Item>
                     {({ active }) => (
-                      <a
-                        href="#"
+                      <Link
+                        to="/contact-event-attendees"
                         className={classNames(
                           active
                             ? "bg-gray-100 text-gray-900"
@@ -110,7 +125,7 @@ function Navbar() {
                         )}
                       >
                         Event Attendees
-                      </a>
+                      </Link>
                     )}
                   </Menu.Item>
                 </div>
@@ -118,8 +133,8 @@ function Navbar() {
                 <div className="py-1">
                   <Menu.Item>
                     {({ active }) => (
-                      <a
-                        href="#"
+                      <Link
+                        to="/contact-event-hoteliers"
                         className={classNames(
                           active
                             ? "bg-gray-100 text-gray-900"
@@ -128,7 +143,7 @@ function Navbar() {
                         )}
                       >
                         Hoteliers
-                      </a>
+                      </Link>
                     )}
                   </Menu.Item>
                 </div>
@@ -137,7 +152,7 @@ function Navbar() {
           </Menu>
           {/* <Link
             className="inline-flex items-center border-b-2 border-white px-1 pt-1 text-xl font-medium text-white"
-            to="/contact"
+            to="/contact-event-ops"
           >
             Contact Us
           </Link> */}
