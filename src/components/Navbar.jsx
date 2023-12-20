@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
@@ -8,6 +8,42 @@ function classNames(...classes) {
 }
 
 function Navbar() {
+  const location = useLocation();
+
+  const isActive = (path) => {
+    // Check if the current location matches the path
+    if (location.pathname === "/contact-event-ops") {
+      return "text-black"; // For Contact page or any other page
+    }
+    if (location.pathname === "/contact-event-attendees") {
+      return "text-black"; // For Contact page or any other page
+    }
+    if (location.pathname === "/contact-event-hoteliers") {
+      return "text-black"; // For Contact page or any other page
+    } else if (path === "/" && location.pathname !== "/") {
+      return "text-white"; // For Home page
+    }
+    return "text-white"; // Default color for other pages
+  };
+
+  const arrowIcon = (path) => {
+    if (location.pathname === "/contact-event-ops") {
+      return "text-black";
+    }
+    if (location.pathname === "/contact-event-ops") {
+      return "text-black"; // For Contact page or any other page
+    }
+    if (location.pathname === "/contact-event-attendees") {
+      return "text-black"; // For Contact page or any other page
+    }
+    if (location.pathname === "/contact-event-hoteliers") {
+      return "text-black"; // For Contact page or any other page
+    } else if (path === "/" && location.pathname === "/") {
+      return "text-white";
+    }
+    return "text-white";
+  };
+
   return (
     <header className="absolute shadow-sm inset-x-0 top-0 z-50">
       <nav
@@ -17,23 +53,33 @@ function Navbar() {
       >
         <div className="hidden lg:flex lg:gap-x-12">
           <Link
-            className="inline-flex items-center border-b-2 border-white px-1 pt-1 text-xl font-medium text-white"
+            className={`border-gray-300 inline-flex items-center border-b-2 px-1 pt-1 text-xl font-medium ${isActive(
+              "/about"
+            )}`}
             to="/about"
           >
             About
           </Link>
           <Link
-            className="inline-flex items-center border-b-2 border-white px-1 pt-1 text-xl font-medium text-white"
+            className={`inline-flex items-center border-gray-300 border-b-2 px-1 pt-1 text-xl font-medium ${isActive(
+              "/events"
+            )}`}
             to="/events"
           >
             Events
           </Link>
           <Menu as="div" className="relative inline-block text-left">
             <div>
-              <Menu.Button className="inline-flex w-full items-center justify-center border-b-2 border-white px-1 pt-1 text-xl font-medium text-white  ">
+              <Menu.Button
+                className={`border-gray-300 inline-flex w-full items-center justify-center border-b-2 px-1 pt-1 text-xl font-medium text-black ${isActive(
+                  "/contact-event-ops"
+                )}`}
+              >
                 Contact Us
                 <ChevronDownIcon
-                  className="-mr-1 h-5 w-5 text-white"
+                  className={`-mr-1 h-5 w-5 text-black ${arrowIcon(
+                    "/contact-event-ops"
+                  )}`}
                   aria-hidden="true"
                 />
               </Menu.Button>
@@ -52,8 +98,8 @@ function Navbar() {
                 <div className="py-1">
                   <Menu.Item>
                     {({ active }) => (
-                      <a
-                        href="/contact"
+                      <Link
+                        to="/contact-event-ops"
                         className={classNames(
                           active
                             ? "bg-gray-100 text-gray-900"
@@ -62,15 +108,15 @@ function Navbar() {
                         )}
                       >
                         Event Operators
-                      </a>
+                      </Link>
                     )}
                   </Menu.Item>
                 </div>
                 <div className="py-1">
                   <Menu.Item>
                     {({ active }) => (
-                      <a
-                        href="#"
+                      <Link
+                        to="/contact-event-attendees"
                         className={classNames(
                           active
                             ? "bg-gray-100 text-gray-900"
@@ -79,7 +125,7 @@ function Navbar() {
                         )}
                       >
                         Event Attendees
-                      </a>
+                      </Link>
                     )}
                   </Menu.Item>
                 </div>
@@ -87,8 +133,8 @@ function Navbar() {
                 <div className="py-1">
                   <Menu.Item>
                     {({ active }) => (
-                      <a
-                        href="#"
+                      <Link
+                        to="/contact-event-hoteliers"
                         className={classNames(
                           active
                             ? "bg-gray-100 text-gray-900"
@@ -97,7 +143,7 @@ function Navbar() {
                         )}
                       >
                         Hoteliers
-                      </a>
+                      </Link>
                     )}
                   </Menu.Item>
                 </div>
@@ -106,7 +152,7 @@ function Navbar() {
           </Menu>
           {/* <Link
             className="inline-flex items-center border-b-2 border-white px-1 pt-1 text-xl font-medium text-white"
-            to="/contact"
+            to="/contact-event-ops"
           >
             Contact Us
           </Link> */}
