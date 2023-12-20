@@ -2,7 +2,7 @@
 
 ## Description
 
-Official website for TCI Housing
+Official website for TCI Housing, INC.
 
 ## Technologies
 
