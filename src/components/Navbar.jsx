@@ -29,7 +29,7 @@ function Navbar() {
         <div className="flex lg:hidden">{/* Mobile menu button */}</div>
       </nav>
       {/* <Dialog
-        as="div"
+        as="div" 
         className="lg:hidden"
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
@@ -68,13 +68,13 @@ function Navbar() {
                 ))}
               </div>
               <div className="py-6">
-                {/* <a
-            href="#"
-            className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-gray-50"
-          >
-            Log in
-          </a> */}
-      {/* </div>
+                <a
+                  href="#"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-gray-50"
+                >
+                  Log in
+                </a>
+              </div>
             </div>
           </div>
         </Dialog.Panel>

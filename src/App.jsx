@@ -19,7 +19,7 @@ export default function App() {
           <Navbar />
           <main className="isolate">
             <Routes>
-            <Route
+              <Route
                 target="_blank"
                 rel="noopener noreferrer"
                 path="/"
@@ -34,11 +34,9 @@ export default function App() {
                 element={<Contact />}
               />
             </Routes>
-
-           
+            <Footer />
           </main>
         </div>
-        <Footer />
       </Router>
     </>
   );
