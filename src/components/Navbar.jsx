@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
@@ -8,6 +8,27 @@ function classNames(...classes) {
 }
 
 function Navbar() {
+  const location = useLocation();
+
+  const isActive = (path) => {
+    // Check if the current location matches the path
+    if (location.pathname === "/contact") {
+      return "text-black"; // For Contact page or any other page
+    } else if (path === "/" && location.pathname !== "/") {
+      return "text-white"; // For Home page
+    }
+    return "text-white"; // Default color for other pages
+  };
+
+  const arrowIcon = (path) => {
+    if (location.pathname === "/contact") {
+      return "text-black";
+    } else if (path === "/" && location.pathname === "/") {
+      return "text-white";
+    }
+    return "text-white";
+  };
+
   return (
     <header className="absolute shadow-sm inset-x-0 top-0 z-50">
       <nav
@@ -17,23 +38,33 @@ function Navbar() {
       >
         <div className="hidden lg:flex lg:gap-x-12">
           <Link
-            className="inline-flex items-center border-b-2 border-white px-1 pt-1 text-xl font-medium text-white"
+            className={`border-gray-300 inline-flex items-center border-b-2 px-1 pt-1 text-xl font-medium ${isActive(
+              "/about"
+            )}`}
             to="/about"
           >
             About
           </Link>
           <Link
-            className="inline-flex items-center border-b-2 border-white px-1 pt-1 text-xl font-medium text-white"
+            className={`inline-flex items-center border-gray-300 border-b-2 px-1 pt-1 text-xl font-medium ${isActive(
+              "/events"
+            )}`}
             to="/events"
           >
             Events
           </Link>
           <Menu as="div" className="relative inline-block text-left">
             <div>
-              <Menu.Button className="inline-flex w-full items-center justify-center border-b-2 border-white px-1 pt-1 text-xl font-medium text-white  ">
+              <Menu.Button
+                className={`border-gray-300 inline-flex w-full items-center justify-center border-b-2 px-1 pt-1 text-xl font-medium text-black ${isActive(
+                  "/contact"
+                )}`}
+              >
                 Contact Us
                 <ChevronDownIcon
-                  className="-mr-1 h-5 w-5 text-white"
+                  className={`-mr-1 h-5 w-5 text-black ${arrowIcon(
+                    "/contact"
+                  )}`}
                   aria-hidden="true"
                 />
               </Menu.Button>
