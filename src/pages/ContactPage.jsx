@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Link } from "react-router-dom";
 
 const people = [
@@ -33,6 +34,7 @@ function ContactPage() {
           </p>
         </div>
         <div className="mt-10 grid grid-cols-3 gap-8 sm:gap-16 sm:grid-cols-6 lg:mx-0 lg:max-w-none">
+          {/* eslint-disable-next-line no-unused-vars */}
           {people.map((person, index) => (
             <Link
               key={person.name}

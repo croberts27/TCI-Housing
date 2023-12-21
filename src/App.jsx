@@ -8,6 +8,9 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import NotFound from "./pages/Error404";
+import Attendees from "./pages/Attendees";
+import Hoteliers from "./pages/Hoteliers";
+import EventOps from "./pages/EventOps";
 
 export default function App() {
   return (
@@ -32,6 +35,27 @@ export default function App() {
                 path="/contact"
                 exact
                 element={<ContactPage />}
+              />
+              <Route
+                target="_blank"
+                rel="noopener noreferrer"
+                path="/attendees"
+                exact
+                element={<Attendees />}
+              />
+              <Route
+                target="_blank"
+                rel="noopener noreferrer"
+                path="/event-ops"
+                exact
+                element={<EventOps />}
+              />
+              <Route
+                target="_blank"
+                rel="noopener noreferrer"
+                path="/hoteliers"
+                exact
+                element={<Hoteliers />}
               />
 
               <Route
