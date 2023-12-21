@@ -1,79 +1,61 @@
 import { Link } from "react-router-dom";
-import { Menu } from "@headlessui/react";
-
-// function classNames(...classes) {
-//   return classes.filter(Boolean).join(" ");
-// }
+// import { Menu } from "@headlessui/react";
 
 function Navbar() {
   // const location = useLocation();
 
   // const isActive = (path) => {
-  //   // Check if the current location matches the path
-  //   if (location.pathname === "/contact-event-ops") {
-  //     return "text-black"; // For Contact page or any other page
+  //   if (location.pathname === "/contact") {
+  //     return "text-black"; // For Contact page
   //   }
-  //   if (location.pathname === "/contact-event-attendees") {
-  //     return "text-black"; // For Contact page or any other page
-  //   }
-  //   if (location.pathname === "/contact-event-hoteliers") {
-  //     return "text-black"; // For Contact page or any other page
-  //   } else if (path === "/" && location.pathname !== "/") {
-  //     return "text-white"; // For Home page
-  //   }
-  //   return "text-white"; // Default color for other pages
-  // };
-
-  // const arrowIcon = (path) => {
-  //   if (location.pathname === "/contact-event-ops") {
-  //     return "text-black";
-  //   }
-  //   if (location.pathname === "/contact-event-ops") {
-  //     return "text-black"; // For Contact page or any other page
-  //   }
-  //   if (location.pathname === "/contact-event-attendees") {
-  //     return "text-black"; // For Contact page or any other page
-  //   }
-  //   if (location.pathname === "/contact-event-hoteliers") {
-  //     return "text-black"; // For Contact page or any other page
-  //   } else if (path === "/" && location.pathname === "/") {
-  //     return "text-white";
-  //   }
-  //   return "text-white";
+  //   return "text-white"; // For other pages
   // };
 
   return (
-    <header className="absolute pt-5 text-white shadow-md inset-x-0 top-0 z-50">
+    <header className="relative text-white shadow-lg inset-x-0 top-0 z-50">
       <nav
-        className="flex items-center justify-between
-   p-6 lg:px-12"
+        className="flex items-center justify-between  lg:px-12"
         aria-label="Global"
       >
+        {/* ... (other code remains unchanged) ... */}
+
         <div className="hidden lg:flex lg:gap-x-12">
+          {/* <Menu
+            as="div"
+            className={`inline-flex w-full items-center justify-center px-1 pt-1 text-xl font-medium ${isActive(
+              "/about"
+            )}`}
+          > */}
           <Link
-            className="border-gray-300 inline-flex items-center border-b-2 px-1 pt-1 text-xl font-medium "
+            className="border-gray-300 inline-flex items-center border-b-2 px-1 pt-1 text-xl font-medium"
             to="/about"
           >
             About
           </Link>
+          {/* </Menu> */}
 
-          <Menu as="div" className="relative inline-block text-left">
-            <div>
-              <Link
-                to="/contact"
-                className="border-gray-300 inline-flex w-full items-center justify-center border-b-2 px-1 pt-1 text-xl font-medium"
-              >
-                Contact Us
-              </Link>
-            </div>
-          </Menu>
-          {/* <Link
+          {/* <Menu
+            as="div"
+            className={`inline-flex w-full items-center justify-center px-1 pt-1 text-xl font-medium ${isActive(
+              "/contact"
+            )}`}
+          > */}
+          <Link
+            to="/contact"
+            className="border-gray-300 inline-flex w-full align-top items-center justify-center border-b-2 px-1 pt-1 text-xl font-medium"
+          >
+            Contact Us
+          </Link>
+          {/* </Menu> */}
+        </div>
+
+        {/* <Link
             className="inline-flex items-center border-b-2 border-white px-1 pt-1 text-xl font-medium text-white"
             to="/contact"
           >
             Contact Us
           </Link> */}
-        </div>
+
         <div className="flex lg:flex-1 justify-end items-center">
           <Link className="-m-1.5 p-1.5" to="/">
             <img

@@ -1,10 +1,20 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 const people = [
   {
     name: "Event Operators",
     imageUrl:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
+      "https://images.unsplash.com/photo-1611432579402-7037e3e2c1e4?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    name: "Event Attendee",
+    imageUrl:
+      "https://plus.unsplash.com/premium_photo-1661342597698-4977ce52f48e?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    name: "Hotelier",
+    imageUrl:
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   // More people...
 ];
@@ -22,55 +32,21 @@ function ContactPage() {
             attending, or need housing for!
           </p>
         </div>
-        <div className="mt-10 align-middle grid grid-cols-10 gap-8 sm:gap-16 sm:grid-cols-6 lg:mx-0 lg:max-w-none">
+        <div className="mt-10 grid grid-cols-3 gap-8 sm:gap-16 sm:grid-cols-6 lg:mx-0 lg:max-w-none">
           {people.map((person, index) => (
-            <button
+            <Link
               key={person.name}
               className="flex flex-col items-center p-2 border rounded-lg focus:outline-none"
             >
               <img
-                className="aspect-[3/2] w-full rounded-lg object-cover"
+                className="aspect-square w-full rounded-lg object-cover"
                 src={person.imageUrl}
                 alt={`Image of ${person.name}`}
               />
               <h3 className="mt-3 text-lg font-semibold leading-6 text-center text-black">
                 {person.name}
               </h3>
-            </button>
-          ))}
-        </div>
-        <div className="mt-10 align-middle grid grid-cols-10 gap-8 sm:gap-16 sm:grid-cols-6 lg:mx-0 lg:max-w-none">
-          {people.map((person, index) => (
-            <button
-              key={person.name}
-              className="flex flex-col items-center p-2 border rounded-lg focus:outline-none"
-            >
-              <img
-                className="aspect-[3/2] w-full rounded-lg object-cover"
-                src={person.imageUrl}
-                alt={`Image of ${person.name}`}
-              />
-              <h3 className="mt-3 text-lg font-semibold leading-6 text-center text-black">
-                {person.name}
-              </h3>
-            </button>
-          ))}
-        </div>
-        <div className="mt-10 align-middle grid grid-cols-10 gap-8 sm:gap-16 sm:grid-cols-6 lg:mx-0 lg:max-w-none">
-          {people.map((person, index) => (
-            <button
-              key={person.name}
-              className="flex flex-col items-center p-2 border rounded-lg focus:outline-none"
-            >
-              <img
-                className="aspect-[3/2] w-full rounded-lg object-cover"
-                src={person.imageUrl}
-                alt={`Image of ${person.name}`}
-              />
-              <h3 className="mt-3 text-lg font-semibold leading-6 text-center text-black">
-                {person.name}
-              </h3>
-            </button>
+            </Link>
           ))}
         </div>
       </div>
