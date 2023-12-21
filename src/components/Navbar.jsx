@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { Menu } from "@headlessui/react";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+// function classNames(...classes) {
+//   return classes.filter(Boolean).join(" ");
+// }
 
 function Navbar() {
   // const location = useLocation();
@@ -43,7 +43,7 @@ function Navbar() {
   // };
 
   return (
-    <header className="absolute pt-5 text-white shadow-sm inset-x-0 top-0 z-50">
+    <header className="absolute pt-5 text-white shadow-md inset-x-0 top-0 z-50">
       <nav
         className="flex items-center justify-between
    p-6 lg:px-12"
@@ -60,7 +60,7 @@ function Navbar() {
           <Menu as="div" className="relative inline-block text-left">
             <div>
               <Link
-                to="/contact-event-ops"
+                to="/contact"
                 className="border-gray-300 inline-flex w-full items-center justify-center border-b-2 px-1 pt-1 text-xl font-medium"
               >
                 Contact Us
@@ -69,7 +69,7 @@ function Navbar() {
           </Menu>
           {/* <Link
             className="inline-flex items-center border-b-2 border-white px-1 pt-1 text-xl font-medium text-white"
-            to="/contact-event-ops"
+            to="/contact"
           >
             Contact Us
           </Link> */}

@@ -2,7 +2,7 @@ import "./index.css";
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import ContactEventOperators from "./pages/ContactPage";
+import ContactPage from "./pages/ContactPage";
 import Banner from "./components/Banner";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
@@ -29,9 +29,9 @@ export default function App() {
               <Route
                 target="_blank"
                 rel="noopener noreferrer"
-                path="/contact-event-ops"
+                path="/contact"
                 exact
-                element={<ContactEventOperators />}
+                element={<ContactPage />}
               />
 
               <Route
