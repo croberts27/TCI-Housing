@@ -2,9 +2,8 @@ import "./index.css";
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import ContactEventOperators from "./pages/ContactEventOperators";
-import ContactEventAttendees from "./pages/ContactEventAttendees";
-import ContactHoteliers from "./pages/ContactHoteliers";
+import ContactEventOperators from "./pages/ContactPage";
+import Banner from "./components/Banner";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -13,6 +12,7 @@ import NotFound from "./pages/Error404";
 export default function App() {
   return (
     <>
+      <Banner />
       <Router>
         <div className="bg-fixed font-poppins bg-repeat bg-hoops-background">
           <Navbar />
@@ -33,21 +33,13 @@ export default function App() {
                 exact
                 element={<ContactEventOperators />}
               />
+
               <Route
-                target="_blank"
                 rel="noopener noreferrer"
-                path="/contact-event-attendees"
-                exact
-                element={<ContactEventAttendees />}
-              />
-              <Route
                 target="_blank"
-                rel="noopener noreferrer"
-                path="/contact-event-hoteliers"
-                exact
-                element={<ContactHoteliers />}
+                path="*"
+                element={<NotFound />}
               />
-              <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
           </main>
