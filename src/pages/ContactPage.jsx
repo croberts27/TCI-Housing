@@ -4,16 +4,19 @@ import { Link } from "react-router-dom";
 const people = [
   {
     name: "Event Operators",
+    path: "/event-ops",
     imageUrl:
       "https://images.unsplash.com/photo-1611432579402-7037e3e2c1e4?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Event Attendee",
+    path: "/attendees",
     imageUrl:
       "https://plus.unsplash.com/premium_photo-1661342597698-4977ce52f48e?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Hotelier",
+    path: "/hoteliers",
     imageUrl:
       "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
@@ -37,6 +40,7 @@ function ContactPage() {
           {/* eslint-disable-next-line no-unused-vars */}
           {people.map((person, index) => (
             <Link
+              to={person.path}
               key={person.name}
               className="flex flex-col items-center p-2 border rounded-lg focus:outline-none"
             >
