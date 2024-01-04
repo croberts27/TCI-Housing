@@ -41,7 +41,10 @@ function Attendees() {
       .then(() => {
         setMailerState({
           email: "",
-          name: "",
+          first_name: "",
+          last_name: "",
+          team_name: "",
+          phone: "",
           message: "",
         });
       });
