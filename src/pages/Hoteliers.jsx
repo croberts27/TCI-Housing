@@ -27,7 +27,25 @@ function Hoteliers() {
       [e.target.message]: e.target.value,
     }));
   }
-
+  const submitEmail = async (e) => {
+    e.preventDefault();
+    console.log({ mailerState });
+    const response = await fetch("http://localhost:3001/send", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ mailerState }),
+    })
+      .then((res) => res.json())
+      .then(() => {
+        setMailerState({
+          email: "",
+          name: "",
+          message: "",
+        });
+      });
+  };
   return (
     <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
       <div
@@ -189,6 +207,7 @@ function Hoteliers() {
         <div className="mt-10">
           <button
             type="submit"
+            onSubmit={submitEmail}
             className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             Submit
