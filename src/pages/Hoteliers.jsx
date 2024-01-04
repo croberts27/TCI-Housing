@@ -8,7 +8,25 @@ function classNames(...classes) {
 }
 
 function Hoteliers() {
-  const [agreed, setAgreed] = useState(false);
+  const [mailerState, setMailerState] = useState({
+    first_name: "",
+    last_name: "",
+    team_name: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+  function handleStateChange(e) {
+    setMailerState((prevState) => ({
+      ...prevState,
+      [e.target.first_name]: e.target.value,
+      [e.target.last_name]: e.target.value,
+      [e.target.team_name]: e.target.value,
+      [e.target.phone]: e.target.value,
+      [e.target.email]: e.target.value,
+      [e.target.message]: e.target.value,
+    }));
+  }
 
   return (
     <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
@@ -51,6 +69,8 @@ function Hoteliers() {
                 type="text"
                 name="first-name"
                 id="first-name"
+                onChange={handleStateChange}
+                value={mailerState.first_name}
                 autoComplete="given-name"
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
@@ -68,6 +88,8 @@ function Hoteliers() {
                 type="text"
                 name="last-name"
                 id="last-name"
+                onChange={handleStateChange}
+                value={mailerState.last_name}
                 autoComplete="family-name"
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
@@ -75,16 +97,18 @@ function Hoteliers() {
           </div>
           <div className="sm:col-span-2">
             <label
-              htmlFor="company"
+              htmlFor="team"
               className="block text-sm font-semibold leading-6 text-gray-900"
             >
-              Company
+              Team Name
             </label>
             <div className="mt-2.5">
               <input
                 type="text"
-                name="company"
-                id="company"
+                name="team"
+                onChange={handleStateChange}
+                value={mailerState.team_name}
+                id="team"
                 autoComplete="organization"
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
@@ -102,6 +126,8 @@ function Hoteliers() {
                 type="email"
                 name="email"
                 id="email"
+                onChange={handleStateChange}
+                value={mailerState.email}
                 autoComplete="email"
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
@@ -128,12 +154,13 @@ function Hoteliers() {
                   <option>CA</option>
                   <option>EU</option>
                 </select>
-        
               </div>
               <input
                 type="tel"
                 name="phone-number"
                 id="phone-number"
+                onChange={handleStateChange}
+                value={mailerState.phone}
                 autoComplete="tel"
                 className="block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
@@ -150,6 +177,8 @@ function Hoteliers() {
               <textarea
                 name="message"
                 id="message"
+                onChange={handleStateChange}
+                value={mailerState.message}
                 rows={4}
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 defaultValue={""}
