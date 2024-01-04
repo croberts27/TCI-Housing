@@ -28,27 +28,25 @@ transporter.verify((err, success) => {
     : console.log(`=== Server is ready to take messages: ${success} ===`);
 });
 
-let mailOptions = {
-  from: "test@gmail.com",
-  to: process.env.EMAIL,
-  subject: "Nodemailer API",
-  text: "Hi from your nodemailer API",
-};
-
 transporter.sendMail(mailOptions, function (err, data) {
   if (err) {
-    console.log("Error " + err);
+    res.json({
+      status: "fail",
+    });
   } else {
-    console.log("Email sent successfully");
+    console.log("== Message Sent ==");
+    res.json({
+      status: "success",
+    });
   }
 });
 
 app.post("/send", function (req, res) {
   let mailOptions = {
-    from: "test@gmail.com",
+    from: `${req.body.mailerState.email}`,
     to: process.env.EMAIL,
-    subject: "Nodemailer API",
-    text: "Hi from your nodemailer API",
+    subject: `Message from: ${req.body.mailerState.email}`,
+    text: `${req.body.mailerState.message}`,
   };
 
   transporter.sendMail(mailOptions, function (err, data) {
