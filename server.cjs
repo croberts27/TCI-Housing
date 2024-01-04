@@ -28,19 +28,6 @@ transporter.verify((err, success) => {
     : console.log(`=== Server is ready to take messages: ${success} ===`);
 });
 
-transporter.sendMail(mailOptions, function (err, data) {
-  if (err) {
-    res.json({
-      status: "fail",
-    });
-  } else {
-    console.log("== Message Sent ==");
-    res.json({
-      status: "success",
-    });
-  }
-});
-
 app.post("/send", function (req, res) {
   let mailOptions = {
     from: `${req.body.mailerState.email}`,
@@ -52,9 +39,14 @@ app.post("/send", function (req, res) {
   transporter.sendMail(mailOptions, function (err, data) {
     if (err) {
       console.log("Error " + err);
+      res.json({
+        status: "fail",
+      });
     } else {
       console.log("Email sent successfully");
-      res.json({ status: "Email sent" });
+      res.json({
+        status: "success",
+      });
     }
   });
 });
