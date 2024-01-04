@@ -38,6 +38,15 @@ function EventOps() {
       body: JSON.stringify({ mailerState }),
     })
       .then((res) => res.json())
+      .then(async (res) => {
+        const resData = await res;
+        console.log(resData);
+        if (resData.status === "success") {
+          alert("Message Sent");
+        } else if (resData.status === "fail") {
+          alert("Message failed to send");
+        }
+      })
       .then(() => {
         setMailerState({
           email: "",
@@ -49,6 +58,7 @@ function EventOps() {
         });
       });
   };
+
   return (
     <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
       <div
