@@ -11,7 +11,7 @@ import NotFound from "./pages/Error404";
 import Attendees from "./pages/Attendees";
 import Hoteliers from "./pages/Hoteliers";
 import EventOps from "./pages/EventOps";
-import About from "./pages/About";
+// import About from "./pages/About";
 
 export default function App() {
   return (
@@ -58,13 +58,13 @@ export default function App() {
                 exact
                 element={<Hoteliers />}
               />
-              <Route
+              {/* <Route
                 target="_blank"
                 rel="noopener noreferrer"
                 path="/about"
                 exact
                 element={<About />}
-              />
+              /> */}
 
               <Route
                 rel="noopener noreferrer"
