@@ -26,12 +26,12 @@ function Navbar() {
               "/about"
             )}`}
           > */}
-          <Link
+          {/* <Link
             className="border-gray-300 inline-flex items-center border-b-2 px-1 pt-1 text-xl font-medium"
             to="/about"
           >
             About
-          </Link>
+          </Link> */}
           {/* </Menu> */}
 
           {/* <Menu

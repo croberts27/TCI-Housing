@@ -2,11 +2,11 @@ import { NewspaperIcon, PhoneIcon } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
 const cards = [
   {
-    name: "About Us",
+    name: "Events",
     description:
       "TCI Housing will solve all of your housing needs for your event! If you are an event operator, attendee, or a hotelier please click here to learn more!",
     icon: NewspaperIcon,
-    path: "/about",
+    path: "/contact",
   },
   {
     name: "Contact Us",
@@ -16,7 +16,7 @@ const cards = [
     path: "/contact",
   },
   {
-    name: "Media Inquiries",
+    name: "Hotels",
     description:
       "TCI Housing will solve all of your housing needs for your event! If you are an event operator, attendee, or a hotelier please click here to learn more!",
     icon: NewspaperIcon,
@@ -47,7 +47,7 @@ export default function Home() {
       </div>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto flex flex-wrap justify-end items-end max-w-3xl lg:mx-0">
-          <h2 className="text-4xl font-bold tracking-tight bg-black/30 p-6 ring-1 rounded-xl ring-transparent  text-white sm:text-6xl">
+          <h2 className="text-4xl font-bold tracking-tight bg-black/50 p-6 ring-1 rounded-xl ring-transparent  text-white sm:text-6xl">
             TCI Housing
           </h2>
         </div>
@@ -56,7 +56,7 @@ export default function Home() {
             <Link
               key={card.name}
               to={card.path} // Corrected: Moved 'to' prop here
-              className="flex gap-x-4 rounded-xl bg-black/30 p-6 ring-1 ring-inset ring-black/10"
+              className="flex gap-x-4 rounded-xl bg-black/50 p-6 ring-1 ring-inset ring-black/10"
             >
               <div>
                 <card.icon
