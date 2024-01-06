@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 // import { Menu } from "@headlessui/react";
+import tciLogo from "@images/tci-logo-trans.png";
 
 function Navbar() {
   // const location = useLocation();
@@ -58,11 +59,7 @@ function Navbar() {
 
         <div className="flex lg:flex-1 justify-end items-center">
           <Link className="-m-1.5 p-1.5" to="/">
-            <img
-              className="h-20 w-auto"
-              src="src\images\tci-logo-trans.png"
-              alt="TCI Housing Logo"
-            />
+            <img className="h-20 w-auto" src={tciLogo} alt="TCI Housing Logo" />
           </Link>
         </div>
 
