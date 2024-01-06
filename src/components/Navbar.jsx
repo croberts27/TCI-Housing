@@ -60,7 +60,7 @@ function Navbar() {
           <Link className="-m-1.5 p-1.5" to="/">
             <img
               className="h-20 w-auto"
-              src=".\src\images\tci-logo-trans.png"
+              src="/tci-logo-trans.png"
               alt="TCI Housing Logo"
             />
           </Link>
